@@ -2,14 +2,21 @@
   <div
     class="flex flex-col items-center gap-4 w-[400px] bg-amber-100 p-4 rounded"
   >
-    <h1 class="text-2xl font-bold">Login</h1>
+    <h1 class="text-2xl font-bold">Sign Up</h1>
 
     <form
       [formGroup]="form"
-      (ngSubmit)="ngSubmit()"
       name="loginForm"
       class="flex flex-col gap-4 w-full"
+      (ngSubmit)="ngSubmit()"
     >
+      <input
+        class="w-full p-2 border border-gray-300 rounded bg-white"
+        type="text"
+        formControlName="name"
+        placeholder="Name"
+      />
+
       <input
         class="w-full p-2 border border-gray-300 rounded bg-white"
         type="text"
@@ -24,8 +31,6 @@
           formControlName="password"
           placeholder="Password"
         />
-
-        <p class="text-blue-500 text-sm cursor-pointer">Forgot password?</p>
       </div>
 
       <button
@@ -35,17 +40,17 @@
         [attr.disabled]="loading ? true : null"
         class="w-full p-2 bg-blue-500 text-white rounded cursor-pointer hover:bg-blue-600 transition-colors"
       >
-        Login
+        Sign Up
       </button>
 
       <div class="w-full flex justify-center">
-        <p class="text-blue-500 text-sm">Don't have an account?</p>
+        <p class="text-blue-500 text-sm">Already have an account?</p>
 
         <p
           class="text-blue-500 text-sm cursor-pointer ml-2 font-bold underline"
-          routerLink="/signup"
+          (click)="redirectToLogin()"
         >
-          Create an account
+          Login
         </p>
       </div>
     </form>
