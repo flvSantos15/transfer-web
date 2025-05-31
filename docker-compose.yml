@@ -1,0 +1,30 @@
+services:
+  web:
+    image: transfer-app
+    container_name: transfer-app-web
+    build: .
+    ports:
+      - "4200:4200"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    tty: true
+    stdin_open: true
+    command: sh -c "npm install && tail -f /dev/null"
+    # command: sh -c "npm install && ng serve --host 0.0.0.0 --poll=1000"
+
+  # Development server (start this when you want to run the app)
+  dev:
+    image: transfer-app
+    container_name: transfer-app-dev
+    build: .
+    ports:
+      - "4201:4201"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    command: ng serve --host 0.0.0.0 --poll=1000

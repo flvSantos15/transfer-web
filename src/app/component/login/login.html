@@ -1,0 +1,42 @@
+<div class="flex w-full h-screen items-center justify-center">
+  <div
+    class="flex flex-col items-center gap-4 w-[400px] bg-amber-100 p-4 rounded"
+  >
+    <h1 class="text-2xl font-bold">Login</h1>
+
+    <form class="flex flex-col gap-4 w-full">
+      <input
+        class="w-full p-2 border border-gray-300 rounded bg-white"
+        type="text"
+        placeholder="Email"
+      />
+
+      <div class="flex flex-col gap-1">
+        <input
+          class="w-full p-2 border border-gray-300 rounded bg-white"
+          type="password"
+          placeholder="Password"
+        />
+
+        <p class="text-blue-500 text-sm cursor-pointer">Forgot password?</p>
+      </div>
+
+      <button
+        type="submit"
+        class="w-full p-2 bg-blue-500 text-white rounded cursor-pointer hover:bg-blue-600 transition-colors"
+      >
+        Login
+      </button>
+
+      <div class="w-full flex justify-center">
+        <p class="text-blue-500 text-sm">Don't have an account?</p>
+
+        <p
+          class="text-blue-500 text-sm cursor-pointer ml-2 font-bold underline"
+        >
+          Create an account
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
