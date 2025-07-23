@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor() {}
+  constructor(private _router: Router) {}
 
   login(email: string, password: string) {
     // chamar o service http
@@ -38,7 +39,7 @@ export class AuthService {
   logout() {
     this.setToken('');
     localStorage.removeItem('token');
-    // this._router.navigate(['/']);
+    this._router.navigate(['/']);
   }
 
   isAuthenticated() {
